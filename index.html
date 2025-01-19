@@ -26,6 +26,25 @@
             font-size: 2.5rem;
         }
 
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
         .service-card {
             background-color: white;
             border: 1px solid #ddd;
@@ -33,13 +52,17 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
             width: 280px;
-            text-align: left;
+            text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #0056b3;
         }
 
         .modal {
@@ -61,7 +84,7 @@
             color: #0056b3;
         }
 
-        .modal .faq {
+        .modal .section {
             margin-top: 1rem;
         }
 
@@ -72,7 +95,7 @@
             background-color: #007bff;
             color: white;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .modal .faq h3:hover {
@@ -111,24 +134,50 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+
+        footer {
+            text-align: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Mas Que Pensiones</h1>
+        <p>Soluciones a tu medida</p>
     </header>
 
-    <div class="service-card" id="modalidad10">
-        <h3>Modalidad 10</h3>
-        <p>Para ti que trabajas de manera independiente, el IMSS te ofrece un nuevo esquema integral de seguridad social.</p>
+    <div class="container">
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="services">
+            <div class="service-card" id="modalidad10">
+                <h3>Modalidad 10</h3>
+                <p>Para ti que trabajas de manera independiente, el IMSS te ofrece un nuevo esquema integral de seguridad social.</p>
+            </div>
+        </section>
     </div>
 
+    <!-- Modal interactivo -->
     <div class="overlay" id="overlay"></div>
-
     <div class="modal" id="modal">
         <button class="close-btn" id="closeModal">Cerrar</button>
         <h2>Modalidad 10</h2>
-        <p>En beneficio de los trabajadores en industrias familiares y los independientes...</p>
+        <p>
+            En beneficio de los trabajadores en industrias familiares y los independientes, como profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados, el IMSS ha dispuesto un esquema integral de Seguridad Social simplificado.
+        </p>
+        <div class="section">
+            <h3>Beneficios:</h3>
+            <ul>
+                <li>Servicios médicos, hospitalarios, farmacéuticos y atención obstétrica.</li>
+                <li>Pago de Incapacidades.</li>
+                <li>Pensión por invalidez y vida.</li>
+                <li>Fondo para el retiro.</li>
+                <li>Prestaciones sociales (velatorios y guarderías).</li>
+            </ul>
+        </div>
         <div class="faq">
             <h3>¿Quiénes son las personas beneficiarias de este nuevo esquema?</h3>
             <p>Las personas trabajadoras independientes, como profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
@@ -148,6 +197,10 @@
             <p>Sí, el IMSS cuenta con una app para facilitar el proceso de inscripción y pagos.</p>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Mas Que Pensiones. Todos los derechos reservados.</p>
+    </footer>
 
     <script>
         const modalidad10 = document.getElementById('modalidad10');
