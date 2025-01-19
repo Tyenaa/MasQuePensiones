@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mas Que Pensiones - Servicios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .section h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .service-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 280px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            color: #0056b3;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .contact-info li {
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info li:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-info li i {
+            color: #007bff;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mas Que Pensiones</h1>
+        <p>Soluciones a tu medida</p>
+    </header>
+
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="section">
+            <h2>Servicios</h2>
+            <p>Ofrecemos una variedad de servicios diseñados para satisfacer tus necesidades:</p>
+            <div class="services">
+                <div class="service-card">
+                    <h3><a href="#afiliacion">¿Quieres afiliarte al seguro social?</a></h3>
+                    <p>Te ayudamos a completar tu proceso de afiliación al seguro social, asegurando tus beneficios.</p>
+                </div>
+                <div class="service-card">
+                    <h3><a href="#pension">¿Quieres pensionarte?</a></h3>
+                    <p>Te asesoramos para que puedas empezar tu proceso de pensión y asegurar tu futuro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Información de Afiliación -->
+        <section id="afiliacion" class="section">
+            <h2>Afiliación al Seguro Social</h2>
+            <p>Por favor, completa la siguiente información para comenzar el proceso de afiliación:</p>
+            <div class="form-container">
+                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <input type="text" name="curp" placeholder="Tu CURP" required>
+                <button type="submit">Enviar Información</button>
+            </div>
+        </section>
+
+        <!-- Sección de Información de Pensión -->
+        <section id="pension" class="section">
+            <h2>Proceso de Pensión</h2>
+            <p>Por favor, completa la siguiente información para empezar tu proceso de pensión:</p>
+            <div class="form-container">
+                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <input type="date" name="fecha_nacimiento" placeholder="Tu fecha de nacimiento" required>
+                <button type="submit">Enviar Información</button>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>¡Estamos aquí para ayudarte! Contáctanos a través de:</p>
+            <ul class="contact-info">
+                <li><i class="fas fa-envelope"></i> Email: MasQuePensiones@gmail.com</li>
+                <li><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/mas_que_pensiones" target="_blank">@mas_que_pensiones</a></li>
+                <li><i class="fas fa-phone"></i> Teléfono: (123) 456-7890</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mas Que Pensiones. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
