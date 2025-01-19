@@ -6,7 +6,6 @@
     <title>Mas Que Pensiones - Servicios</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* styles.css - Todo el CSS aquí */
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
@@ -99,6 +98,12 @@
             color: #0056b3;
         }
 
+        .service-card h4 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+
         footer {
             text-align: center;
             background-color: #0056b3;
@@ -110,62 +115,6 @@
         footer p {
             margin: 0;
             font-size: 0.9rem;
-        }
-
-        /* Estilos para la sección de Contacto */
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-card {
-            background-color: #ffffff;
-            border: 2px solid #ddd;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            width: 280px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-card i {
-            font-size: 3rem;
-            color: #007bff;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            margin: 1rem 0;
-            font-size: 1.5rem;
-            color: #007bff;
-        }
-
-        .contact-card p {
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .contact-card a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-card a:hover {
-            color: #0056b3;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-card:hover i {
-            color: #0056b3;
         }
     </style>
 </head>
@@ -188,7 +137,8 @@
             <div class="services">
                 <div class="service-card">
                     <h3>¿Quieres afiliarte al seguro social?</h3>
-                    <p>Te ayudamos a completar tu proceso de afiliación al seguro social, asegurando tus beneficios.</p>
+                    <h4>Modalidad 10</h4>
+                    <p>Para ti que trabajas de manera independiente, el IMSS te ofrece un nuevo esquema integral de seguridad social.</p>
                 </div>
                 <div class="service-card">
                     <h3>¿Quieres pensionarte?</h3>
@@ -201,23 +151,11 @@
         <section id="contacto" class="section">
             <h2>Contacto</h2>
             <p>¡Estamos aquí para ayudarte! Contáctanos a través de:</p>
-            <div class="contact-methods">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>Escríbenos a <a href="mailto:MasQuePensiones@gmail.com">MasQuePensiones@gmail.com</a></p>
-                </div>
-                <div class="contact-card">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram</h3>
-                    <p>Sigue nuestra cuenta: <a href="https://www.instagram.com/mas_que_pensiones" target="_blank">@mas_que_pensiones</a></p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Teléfono</h3>
-                    <p>Llámanos al: <a href="tel:+1234567890">+123 456 7890</a></p>
-                </div>
-            </div>
+            <ul>
+                <li>Email: <a href="mailto:MasQuePensiones@gmail.com">MasQuePensiones@gmail.com</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/mas_que_pensiones" target="_blank">@mas_que_pensiones</a></li>
+                <li>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></li>
+            </ul>
         </section>
     </div>
 
