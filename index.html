@@ -199,6 +199,12 @@
             padding: 1rem;
             margin-top: 2rem;
         }
+
+        /* Imagenes en contacto */
+        .contact img {
+            width: 30px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -260,6 +266,11 @@
             <p>Email: <strong>tuemail@empresa.com</strong></p>
             <p>Instagram: <strong>Mas_Que_Pensiones</strong></p>
             <p>Teléfono: <strong>123 1231 1123</strong></p>
+            <div>
+                <img src="https://via.placeholder.com/30" alt="Email Icon">Email
+                <img src="https://via.placeholder.com/30" alt="Instagram Icon">Instagram
+                <img src="https://via.placeholder.com/30" alt="Phone Icon">Teléfono
+            </div>
         </section>
 
         <!-- FAQ Section -->
@@ -285,23 +296,23 @@
 
             <h4>Modalidad 40</h4>
             <p><strong>¿Qué es la Modalidad 40?</strong></p>
-            <p>Es una modalidad para que los trabajadores que ya están afiliados al IMSS continúen cotizando para su pensión aún después de dejar de trabajar.</p>
+            <p>Es una modalidad para que los trabajadores que ya están afiliados al IMSS continúen cotizando para su pensión.</p>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Mas Que Pensiones. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Mas Que Pensiones - Todos los derechos reservados</p>
     </footer>
 
-    <!-- Script para el modal -->
     <script>
-        const modalidad10 = document.getElementById('modalidad10');
+        // Script para mostrar el modal de Modalidad 10
+        const servicioModalidad10 = document.getElementById('modalidad10');
         const modal = document.getElementById('modal');
         const overlay = document.getElementById('overlay');
         const closeModal = document.getElementById('closeModal');
 
-        modalidad10.addEventListener('click', () => {
+        servicioModalidad10.addEventListener('click', () => {
             modal.style.display = 'block';
             overlay.style.display = 'block';
         });
