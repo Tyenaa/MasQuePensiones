@@ -174,7 +174,24 @@
             background-color: #0056b3;
         }
 
-        /* Footer */
+        /* FAQ Section */
+        .faq {
+            background-color: #ffffff;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq h3 {
+            color: #007bff;
+        }
+
+        .faq p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
         footer {
             text-align: center;
             background-color: #0056b3;
@@ -196,6 +213,7 @@
         <ul>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
     </nav>
 
@@ -206,17 +224,17 @@
             <h2>Servicios</h2>
             <div class="services">
                 <div class="service-card" id="modalidad10">
-                    <h3>Modalidad 10</h3>
-                    <p>Descubre los beneficios del esquema para trabajadores independientes.</p>
+                    <h3>¿Quieres afiliarte al seguro social?</h3>
+                    <p>La solución es la Modalidad 10</p>
                 </div>
                 <div class="service-card">
-                    <h3>Afiliación al Seguro Social</h3>
-                    <p>Te ayudamos a completar tu proceso de afiliación al IMSS.</p>
+                    <h3>Modalidad 40</h3>
+                    <p>La opción para los trabajadores que buscan asegurar su pensión.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Modal interactivo -->
+        <!-- Modalidad 10 -->
         <div class="overlay" id="overlay"></div>
         <div class="modal" id="modal">
             <button class="close-btn" id="closeModal">Cerrar</button>
@@ -229,20 +247,45 @@
                     <li>Atención médica y hospitalaria.</li>
                     <li>Fondo para el retiro.</li>
                     <li>Pensión por invalidez.</li>
+                    <li>Acceso a guarderías y prestaciones sociales.</li>
                 </ul>
+                <h3>¿Quiénes pueden aplicar?</h3>
+                <p>Este esquema está diseñado para personas que trabajan de manera independiente, como artesanos, comerciantes, y profesionales.</p>
             </div>
         </div>
 
         <!-- Sección de contacto -->
         <section id="contacto" class="contact">
             <h3>Contacto</h3>
-            <p>Envíanos tus dudas o comentarios:</p>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <textarea placeholder="Mensaje" rows="5" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+            <p>Email: <strong>tuemail@empresa.com</strong></p>
+            <p>Instagram: <strong>Mas_Que_Pensiones</strong></p>
+            <p>Teléfono: <strong>123 1231 1123</strong></p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <h3>Preguntas Frecuentes</h3>
+            <h4>Modalidad 10</h4>
+            <p><strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong></p>
+            <p>Trabajadores independientes como artesanos, comerciantes, profesionales, y otros no asalariados.</p>
+            <p><strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong></p>
+            <p>No, una vez te afilies, solo debes hacer los pagos correspondientes cada mes.</p>
+            <p><strong>¿Si estuve afiliado al IMSS anteriormente, se suman las semanas cotizadas?</strong></p>
+            <p>Sí, las semanas cotizadas en el régimen anterior se suman a tu historial en este nuevo esquema.</p>
+            <p><strong>¿Las personas independientes deben pagar sus cuotas del Infonavit?</strong></p>
+            <p>Sí, el Infonavit debe ser cubierto por los trabajadores, si así lo requieren.</p>
+            <p><strong>¿Cuánto tengo que pagar?</strong></p>
+            <p>El monto depende de la base de cotización, que puedes calcular en la página del IMSS.</p>
+            <p><strong>¿A partir de cuándo puedo inscribirme?</strong></p>
+            <p>Puedes inscribirte en cualquier momento.</p>
+            <p><strong>¿Existen canales de pago?</strong></p>
+            <p>Sí, puedes pagar a través de la página del IMSS y en ventanillas bancarias.</p>
+            <p><strong>¿Existe una app?</strong></p>
+            <p>No, actualmente no hay una app oficial, pero puedes gestionar tu afiliación a través de la página web del IMSS.</p>
+
+            <h4>Modalidad 40</h4>
+            <p><strong>¿Qué es la Modalidad 40?</strong></p>
+            <p>Es una modalidad para que los trabajadores que ya están afiliados al IMSS continúen cotizando para su pensión aún después de dejar de trabajar.</p>
         </section>
     </div>
 
