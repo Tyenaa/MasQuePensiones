@@ -77,12 +77,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, flex-grow 0.3s;
+            flex-grow: 1;
         }
 
         .service-card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card.active {
+            flex-grow: 2;
         }
 
         .service-card h3 {
@@ -223,11 +228,20 @@
                     <p>La solución es la Modalidad 10</p>
                     <div class="service-info">
                         <h4>Descripción de Modalidad 10:</h4>
-                        <p>Esta modalidad está diseñada para aquellos que desean seguir cotizando de forma independiente...</p>
+                        <p>Para ti que trabajas de manera independiente, el IMSS te ofrece un nuevo esquema integral de seguridad social.</p>
+                        <h5>Beneficios:</h5>
                         <ul>
-                            <li>Accesibilidad a pensión.</li>
-                            <li>Requisitos flexibles.</li>
-                            <li>Detalles específicos para cada situación.</li>
+                            <li>Servicios médicos, hospitalarios, farmacéuticos y atención obstétrica.</li>
+                            <li>Pago de Incapacidades.</li>
+                            <li>Pensión por invalidez y vida.</li>
+                            <li>Fondo para el retiro.</li>
+                            <li>Prestaciones sociales dentro de las que se encuentran velatorios y guarderías.</li>
+                        </ul>
+                        <h5>Importante:</h5>
+                        <ul>
+                            <li>Los trámites se realizan directamente en la página del IMSS.</li>
+                            <li>Extiende tu afiliación a tus beneficiarios.</li>
+                            <li>Para más detalles, consulta la calculadora en línea del IMSS.</li>
                         </ul>
                     </div>
                 </div>
@@ -236,11 +250,18 @@
                     <p>La opción para los trabajadores que buscan asegurar su pensión.</p>
                     <div class="service-info">
                         <h4>Descripción de Modalidad 40:</h4>
-                        <p>La Modalidad 40 es perfecta para quienes han sido dados de baja y desean seguir cotizando...</p>
+                        <p>¿Fuiste dado de baja por tu patrón pero quieres seguir cotizando en el IMSS? ¡Ya puedes inscribirte en la continuación voluntaria en el régimen obligatorio!</p>
+                        <h5>Beneficios:</h5>
                         <ul>
-                            <li>Requisitos de inscripción en línea.</li>
-                            <li>Beneficios de largo plazo.</li>
-                            <li>Proceso sencillo de actualización.</li>
+                            <li>Incrementa tu pensión si tu alta laboral fue antes del 1 de julio de 1997.</li>
+                            <li>Solicitud de Inscripción a la Continuación Voluntaria en el Régimen Obligatorio.</li>
+                            <li>Puedes realizar el trámite en línea o de manera presencial.</li>
+                        </ul>
+                        <h5>Requisitos y detalles:</h5>
+                        <ul>
+                            <li>El asegurado dado de baja puede realizar el trámite o autorizar a alguien mediante carta poder.</li>
+                            <li>El Instituto ajustará el salario mínimo cada vez que haya incrementos.</li>
+                            <li>Si no pagas tus cuotas oportunamente, deberás pagar con recargos.</li>
                         </ul>
                     </div>
                 </div>
@@ -281,10 +302,11 @@
         // JavaScript para el funcionamiento de las tarjetas de servicio y FAQ
         const serviceCards = document.querySelectorAll('.service-card');
 
-        // Mostrar más información en el menú interactivo
+        // Mostrar más información en el menú interactivo y ajustar tamaño
         serviceCards.forEach(card => {
             card.addEventListener('click', () => {
-                card.classList.toggle('active');
+                serviceCards.forEach(c => c.classList.remove('active'));  // Remove active from all cards
+                card.classList.add('active');  // Add active to clicked card
             });
         });
 
