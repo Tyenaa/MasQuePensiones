@@ -189,6 +189,48 @@
             background-color: #003a8b;
         }
 
+        /* Estilo de FAQ */
+        .faq-section {
+            background-color: #f7f9fc;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .faq-item {
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .faq-item h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #0047ab;
+            margin: 0;
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 1rem;
+            color: #555;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(90deg);
+        }
+
         footer {
             text-align: center;
             background-color: #003a8b;
@@ -199,44 +241,6 @@
 
         footer p {
             margin: 0;
-        }
-
-        /* Estilo FAQ */
-        .faq-container {
-            margin-top: 2rem;
-        }
-
-        .faq-item {
-            background-color: #fff;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background-color: #f7f7f7;
-        }
-
-        .faq-item p {
-            display: none;
-            margin-top: 1rem;
-        }
-
-        .faq-item.active p {
-            display: block;
-        }
-
-        .faq-item .arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .arrow {
-            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -264,7 +268,7 @@
             <div class="services">
                 <div class="service-card" id="modalidad10">
                     <h3>Modalidad 10</h3>
-                    <p>La solución es la Modalidad 10</p>
+                    <p>Para ti que trabajas de manera independiente. </p>
                 </div>
                 <div class="service-card" id="modalidad40">
                     <h3>Modalidad 40</h3>
@@ -317,51 +321,62 @@
             </div>
         </div>
 
-        <!-- Sección FAQ -->
-        <section id="faq" class="faq-container">
+        <!-- Sección de contacto -->
+        <section id="contacto" class="contact">
+            <h3>Contacto</h3>
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Sección de FAQ -->
+        <section id="faq" class="faq-section">
             <h2>Preguntas Frecuentes</h2>
-
             <div class="faq-item">
-                <span>¿Quiénes son las personas beneficiarias de este nuevo esquema?</span>
-                <span class="arrow">▶</span>
-                <p>Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
+                <h3>¿Qué es la Modalidad 10? <span class="arrow">→</span></h3>
+                <p>La Modalidad 10 está destinada a trabajadores independientes, tales como profesionales, artesanos, comerciantes en pequeño, entre otros, y ofrece beneficios como servicios médicos y pensión.</p>
             </div>
-
             <div class="faq-item">
-                <span>¿Mes con mes se tiene que hacer el trámite de afiliación?</span>
-                <span class="arrow">▶</span>
-                <p>No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.</p>
+                <h3>¿Cómo puedo inscribirme en la Modalidad 40? <span class="arrow">→</span></h3>
+                <p>La inscripción puede realizarse de manera online o presencial. Es importante saber los requisitos y las cuotas correspondientes para poder acceder a los beneficios.</p>
             </div>
-
-            <div class="faq-item">
-                <span>Si en algún momento estuve afiliado al IMSS ¿se suman las semanas cotizadas del nuevo esquema?</span>
-                <span class="arrow">▶</span>
-                <p>Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.</p>
-            </div>
-
         </section>
     </div>
 
-    <!-- Sección de contacto -->
-    <section id="contacto" class="contact">
-        <h3>Contacto</h3>
-        <form action="#" method="post">
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Más Que Pensiones. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Mas Que Pensiones. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        // Script para manejar el FAQ
-        const faqItems = document.querySelectorAll('.faq-item');
+        // JavaScript para el funcionamiento de las tarjetas de servicio y FAQ
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modals = document.querySelectorAll('.modal');
+        const overlay = document.getElementById('overlay');
 
+        // Mostrar modal
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.id;
+                const modal = document.getElementById(modalId);
+                modal.classList.add('open');
+                overlay.classList.add('open');
+            });
+        });
+
+        // Cerrar modal
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                modals.forEach(modal => modal.classList.remove('open'));
+                overlay.classList.remove('open');
+            });
+        });
+
+        // FAQ toggle
+        const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
