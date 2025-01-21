@@ -11,13 +11,13 @@
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9fafb;
+            background-color: #e6f7ff;
             color: #333;
             scroll-behavior: smooth;
         }
 
         header {
-            background: linear-gradient(90deg, #007bff, #0047ab);
+            background: linear-gradient(90deg, #0047ab, #007bff);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -86,16 +86,17 @@
         }
 
         .service-card h3 {
-            color: #007bff;
+            color: #0047ab;
         }
 
-        /* Modal */
+        /* Modal con animación */
         .modal {
             display: none;
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
             background-color: white;
             padding: 1.5rem;
             width: 90%;
@@ -103,6 +104,13 @@
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .modal.open {
+            display: block;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
         }
 
         .modal h2 {
@@ -140,20 +148,27 @@
             z-index: 999;
         }
 
-        /* Sección de contacto */
+        .overlay.open {
+            display: block;
+        }
+
+        /* Sección de contacto remodelada */
         .contact {
-            background: #f1f4f8;
+            background: linear-gradient(90deg, #f7f9fc, #eaf4ff);
             padding: 2rem 1rem;
             border-radius: 10px;
+            text-align: center;
         }
 
         .contact h3 {
-            color: #007bff;
+            color: #0047ab;
         }
 
         .contact form {
             display: grid;
             gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .contact input, .contact textarea, .contact button {
@@ -164,46 +179,26 @@
         }
 
         .contact button {
-            background-color: #007bff;
+            background-color: #0047ab;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .contact button:hover {
-            background-color: #0056b3;
-        }
-
-        /* FAQ Section */
-        .faq {
-            background-color: #ffffff;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq h3 {
-            color: #007bff;
-        }
-
-        .faq p {
-            font-size: 1rem;
-            line-height: 1.6;
+            background-color: #003a8b;
         }
 
         footer {
             text-align: center;
-            background-color: #0056b3;
+            background-color: #003a8b;
             color: white;
             padding: 1rem;
             margin-top: 2rem;
         }
 
-        /* Imagenes en contacto */
-        .contact img {
-            width: 30px;
-            margin-right: 10px;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -230,73 +225,54 @@
             <h2>Servicios</h2>
             <div class="services">
                 <div class="service-card" id="modalidad10">
-                    <h3>Modalidad 10</h3> <!-- Título actualizado -->
+                    <h3>Modalidad 10</h3>
                     <p>La solución es la Modalidad 10</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="modalidad40">
                     <h3>Modalidad 40</h3>
                     <p>La opción para los trabajadores que buscan asegurar su pensión.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Modalidad 10 -->
+        <!-- Modalidades -->
         <div class="overlay" id="overlay"></div>
-        <div class="modal" id="modal">
-            <button class="close-btn" id="closeModal">Cerrar</button>
-            <h2>Modalidad 10</h2> <!-- Título actualizado -->
+        <div class="modal" id="modal10">
+            <button class="close-btn">Cerrar</button>
+            <h2>Modalidad 10</h2>
             <div class="content">
-                <p>
-                    En beneficio de los trabajadores independientes, el IMSS ofrece un esquema integral de Seguridad Social. Beneficios principales:
-                </p>
+                <p>En beneficio de los trabajadores independientes, el IMSS ofrece un esquema integral de Seguridad Social. Beneficios principales:</p>
                 <ul>
                     <li>Atención médica y hospitalaria.</li>
                     <li>Fondo para el retiro.</li>
                     <li>Pensión por invalidez.</li>
                     <li>Acceso a guarderías y prestaciones sociales.</li>
                 </ul>
-                <h3>¿Quiénes pueden aplicar?</h3>
-                <p>Este esquema está diseñado para personas que trabajan de manera independiente, como artesanos, comerciantes, y profesionales.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal40">
+            <button class="close-btn">Cerrar</button>
+            <h2>Modalidad 40</h2>
+            <div class="content">
+                <p>La Modalidad 40 permite a los trabajadores que ya están afiliados al IMSS continuar cotizando para su pensión.</p>
+                <ul>
+                    <li>Aumenta tu pensión mensual.</li>
+                    <li>Continúa acumulando semanas cotizadas.</li>
+                    <li>Es ideal para trabajadores independientes.</li>
+                </ul>
             </div>
         </div>
 
         <!-- Sección de contacto -->
         <section id="contacto" class="contact">
             <h3>Contacto</h3>
-            <p>Email: <strong>Por favor, ingrese su correo aquí</strong></p> <!-- Espacio para correo -->
-            <p>Instagram: <strong><a href="https://www.instagram.com/Mas_Que_Pensiones" target="_blank">Mas_Que_Pensiones</a></strong></p>
-            <p>Teléfono: <strong>Por favor, ingrese su número aquí</strong></p> <!-- Espacio para teléfono -->
-            <div>
-                <a href="mailto:correo@empresa.com"><img src="https://via.placeholder.com/30" alt="Email Icon">Correo Electrónico</a>
-                <a href="https://www.instagram.com/Mas_Que_Pensiones" target="_blank"><img src="https://via.placeholder.com/30" alt="Instagram Icon">Instagram</a>
-                <a href="https://www.facebook.com/Mas_Que_Pensiones" target="_blank"><img src="https://via.placeholder.com/30" alt="Facebook Icon">Facebook</a>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="faq">
-            <h3>Preguntas Frecuentes</h3>
-            <h4>Modalidad 10</h4>
-            <p><strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong></p>
-            <p>Trabajadores independientes como artesanos, comerciantes, profesionales, y otros no asalariados.</p>
-            <p><strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong></p>
-            <p>No, una vez te afilies, solo debes hacer los pagos correspondientes cada mes.</p>
-            <p><strong>¿Si estuve afiliado al IMSS anteriormente, se suman las semanas cotizadas?</strong></p>
-            <p>Sí, las semanas cotizadas en el régimen anterior se suman a tu historial en este nuevo esquema.</p>
-            <p><strong>¿Las personas independientes deben pagar sus cuotas del Infonavit?</strong></p>
-            <p>Sí, el Infonavit debe ser cubierto por los trabajadores, si así lo requieren.</p>
-            <p><strong>¿Cuánto tengo que pagar?</strong></p>
-            <p>El monto depende de la base de cotización, que puedes calcular en la página del IMSS.</p>
-            <p><strong>¿A partir de cuándo puedo inscribirme?</strong></p>
-            <p>Puedes inscribirte en cualquier momento.</p>
-            <p><strong>¿Existen canales de pago?</strong></p>
-            <p>Sí, puedes pagar a través de la página del IMSS y en ventanillas bancarias.</p>
-            <p><strong>¿Existe una app?</strong></p>
-            <p>No, actualmente no hay una app oficial, pero puedes gestionar tu afiliación a través de la página web del IMSS.</p>
-
-            <h4>Modalidad 40</h4>
-            <p><strong>¿Qué es la Modalidad 40?</strong></p>
-            <p>Es una modalidad para que los trabajadores que ya están afiliados al IMSS continúen cotizando para su pensión.</p>
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <textarea rows="5" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </div>
 
@@ -306,27 +282,28 @@
     </footer>
 
     <script>
-        // Script para mostrar el modal de Modalidad 10
-        const servicioModalidad10 = document.getElementById('modalidad10');
-        const modal = document.getElementById('modal');
+        // Animaciones para modales
+        const modalidad10 = document.getElementById('modalidad10');
+        const modalidad40 = document.getElementById('modalidad40');
+        const modal10 = document.getElementById('modal10');
+        const modal40 = document.getElementById('modal40');
         const overlay = document.getElementById('overlay');
-        const closeModal = document.getElementById('closeModal');
+        const closeButtons = document.querySelectorAll('.close-btn');
 
-        servicioModalidad10.addEventListener('click', () => {
-            modal.style.display = 'block';
-            overlay.style.display = 'block';
-        });
+        function openModal(modal) {
+            modal.classList.add('open');
+            overlay.classList.add('open');
+        }
 
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            overlay.style.display = 'none';
-        });
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('open'));
+            overlay.classList.remove('open');
+        }
 
-        overlay.addEventListener('click', () => {
-            modal.style.display = 'none';
-            overlay.style.display = 'none';
-        });
+        modalidad10.addEventListener('click', () => openModal(modal10));
+        modalidad40.addEventListener('click', () => openModal(modal40));
+        closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+        overlay.addEventListener('click', closeModal);
     </script>
 </body>
 </html>
-
