@@ -89,67 +89,46 @@
             color: #0047ab;
         }
 
-        /* Modal con animación */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            opacity: 0;
-            background-color: white;
-            padding: 1.5rem;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+        /* Sección FAQ */
+        .faq-section {
+            margin-top: 2rem;
         }
 
-        .modal.open {
-            display: block;
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .modal h2 {
-            margin-top: 0;
-            color: #0056b3;
-        }
-
-        .modal .content {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .modal .close-btn {
-            background-color: #ff5e57;
-            color: white;
-            border: none;
+        .faq-item {
+            background-color: #f7f9fc;
             border-radius: 5px;
-            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
             cursor: pointer;
-            float: right;
         }
 
-        .modal .close-btn:hover {
-            background-color: #e74c3c;
+        .faq-item h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            color: #0047ab;
+            font-size: 1.2rem;
         }
 
-        .overlay {
+        .faq-item p {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+            padding-top: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        .overlay.open {
+        .faq-item.active p {
             display: block;
+        }
+
+        .faq-item .arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(90deg);
         }
 
         /* Sección de contacto remodelada */
@@ -235,50 +214,6 @@
             </div>
         </section>
 
-        <!-- Modalidades -->
-        <div class="overlay" id="overlay"></div>
-        <div class="modal" id="modal10">
-            <button class="close-btn">Cerrar</button>
-            <h2>Modalidad 10</h2>
-            <div class="content">
-                <p>Para ti que trabajas de manera independiente, el IMSS te ofrece un nuevo esquema integral de seguridad social. En beneficio de los trabajadores independientes, como:</p>
-                <ul>
-                    <li>Industria familiar.</li>
-                    <li>Profesionales.</li>
-                    <li>Comerciantes en pequeño.</li>
-                    <li>Artesanos y demás trabajadores no asalariados.</li>
-                </ul>
-                <p>Beneficios principales al estar afiliado:</p>
-                <ul>
-                    <li>Servicios médicos, hospitalarios, farmacéuticos y atención obstétrica.</li>
-                    <li>Pago de incapacidades.</li>
-                    <li>Pensión por invalidez y vida.</li>
-                    <li>Fondo para el retiro.</li>
-                    <li>Prestaciones sociales, como velatorios y guarderías.</li>
-                </ul>
-                <p>Extiende tu afiliación a tus beneficiarios y comenta a tus familiares que viven en el extranjero. ¡Consulta más en la página del IMSS!</p>
-            </div>
-        </div>
-
-        <div class="modal" id="modal40">
-            <button class="close-btn">Cerrar</button>
-            <h2>Modalidad 40</h2>
-            <div class="content">
-                <p>¿Fuiste dado de baja por tu patrón pero quieres seguir cotizando en el Instituto Mexicano del Seguro Social (IMSS)?</p>
-                <p>Ya puedes inscribirte en la continuación voluntaria en el régimen obligatorio realizando el trámite vía internet o presencial. ¡Entérate cómo!</p>
-                <ul>
-                    <li>Obten o incrementa tu pensión si tu alta laboral al IMSS fue antes del 01 julio 1997.</li>
-                    <li>Quien lo puede realizar: El asegurado dado de baja en el régimen obligatorio o, en su caso, la persona que autorice para realizar el trámite con carta poder.</li>
-                    <li>Generación del “Aviso de Inscripción del Trabajador AFIL-02”.</li>
-                    <li>El Instituto ajustará el salario mínimo cada vez que hay incrementos.</li>
-                    <li>El afiliado pagará las cuotas respectivas por mensualidades adelantadas a más tardar el día diecisiete del mes de que se trate.</li>
-                    <li>A partir de la entrada en vigor de la Ley del Seguro Social de 1997, la continuación voluntaria en el régimen obligatorio no genera el derecho a los servicios médicos.</li>
-                    <li>El asegurado que no pague sus cuotas oportunamente o haya sido dado de baja por mora y desee volver a contratar la continuación voluntaria en el régimen obligatorio, deberá pagar sus cuotas retroactivamente con los recargos correspondientes.</li>
-                </ul>
-                <p>Para cualquier aclaración, se recomienda al asegurado conservar sus comprobantes de pago.</p>
-            </div>
-        </div>
-
         <!-- Sección de contacto -->
         <section id="contacto" class="contact">
             <h3>Contacto</h3>
@@ -291,60 +226,53 @@
         </section>
 
         <!-- Sección FAQ -->
-        <section id="faq">
+        <section id="faq" class="faq-section">
             <h2>Preguntas Frecuentes</h2>
-            <div class="faq">
-                <h3>Modalidad 10</h3>
-                <ul>
-                    <li>
-                        <strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong>
-                        <p>Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
-                    </li>
-                    <li>
-                        <strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong>
-                        <p>No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.</p>
-                    </li>
-                    <li>
-                        <strong>Si en algún momento estuve afiliado al IMSS y coticé, ¿se suman las semanas cotizadas del nuevo esquema?</strong>
-                        <p>Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.</p>
-                    </li>
-                    <li>
-                        <strong>¿Las personas trabajadoras independientes deben pagar sus cuotas del Infonavit?</strong>
-                        <p>No, las cuotas del Infonavit no aplican para este esquema.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cuánto tengo que pagar?</strong>
-                        <p>El monto a pagar dependerá de la calculadora en la página oficial del IMSS, basada en tus ingresos.</p>
-                    </li>
-                    <li>
-                        <strong>¿A partir de cuándo puedo inscribirme?</strong>
-                        <p>Puedes inscribirte en cualquier momento desde el portal oficial del IMSS.</p>
-                    </li>
-                    <li>
-                        <strong>Canales de Pago</strong>
-                        <p>Los pagos se realizan en línea desde el portal del IMSS o en bancos autorizados.</p>
-                    </li>
-                    <li>
-                        <strong>¿Existe una app?</strong>
-                        <p>Sí, puedes realizar gestiones desde la aplicación oficial del IMSS.</p>
-                    </li>
-                </ul>
 
-                <h3>Modalidad 40</h3>
-                <ul>
-                    <li>
-                        <strong>¿Cuál es el costo del trámite en cualquier modalidad?</strong>
-                        <p>El trámite es gratuito.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cuál es el costo de la asesoría personalizada?</strong>
-                        <p>El costo varía dependiendo de cada caso particular.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cómo se analiza mi pensión sin la Modalidad 40?</strong>
-                        <p>Se evalúa cuánto tiempo invertirías, la suma de dinero necesaria y la pensión estimada que podrías recibir. Se recomienda planificar de manera realista para evitar complicaciones financieras.</p>
-                    </li>
-                </ul>
+            <!-- Modalidad 10 -->
+            <div class="faq-item" id="faq-modalidad10">
+                <h3>Modalidad 10 <span class="arrow">▶</span></h3>
+                <p>
+                    <strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong><br>
+                    Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.
+                </p>
+                <p>
+                    <strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong><br>
+                    No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.
+                </p>
+                <p>
+                    <strong>Si en algún momento estuve afiliado al IMSS y coticé, ¿se suman las semanas cotizadas del nuevo esquema?</strong><br>
+                    Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.
+                </p>
+                <p>
+                    <strong>¿Las personas trabajadoras independientes deben pagar sus cuotas del Infonavit?</strong><br>
+                    No, las cuotas del Infonavit no aplican para este esquema.
+                </p>
+                <p>
+                    <strong>¿Cuál es el costo de la asesoría personalizada?</strong><br>
+                    El costo varía dependiendo de cada caso particular.
+                </p>
+                <p>
+                    <strong>¿Cuánto tengo que pagar?</strong><br>
+                    El monto a pagar dependerá de la calculadora en la página oficial del IMSS, basada en tus ingresos.
+                </p>
+            </div>
+
+            <!-- Modalidad 40 -->
+            <div class="faq-item" id="faq-modalidad40">
+                <h3>Modalidad 40 <span class="arrow">▶</span></h3>
+                <p>
+                    <strong>¿Cuál es el costo del trámite en cualquier modalidad?</strong><br>
+                    El trámite es gratuito.
+                </p>
+                <p>
+                    <strong>¿Cuál es el costo de la asesoría personalizada?</strong><br>
+                    El costo varía dependiendo de cada caso particular.
+                </p>
+                <p>
+                    <strong>¿Cómo se analiza mi pensión sin la Modalidad 40?</strong><br>
+                    Se evalúa cuánto tiempo invertirías, la suma de dinero necesaria y la pensión estimada que podrías recibir. Se recomienda planificar de manera realista para evitar complicaciones financieras.
+                </p>
             </div>
         </section>
     </div>
@@ -355,30 +283,11 @@
     </footer>
 
     <script>
-        // Scripts para manejar los modales
-        const overlay = document.getElementById('overlay');
-        const modals = document.querySelectorAll('.modal');
-        const serviceCards = document.querySelectorAll('.service-card');
-        const closeModalButtons = document.querySelectorAll('.close-btn');
-
-        serviceCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.id.replace('modalidad', 'modal');
-                document.getElementById(modalId).classList.add('open');
-                overlay.classList.add('open');
+        // Función para alternar la visibilidad de las respuestas
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
             });
-        });
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.parentElement.classList.remove('open');
-                overlay.classList.remove('open');
-            });
-        });
-
-        overlay.addEventListener('click', () => {
-            modals.forEach(modal => modal.classList.remove('open'));
-            overlay.classList.remove('open');
         });
     </script>
 </body>
