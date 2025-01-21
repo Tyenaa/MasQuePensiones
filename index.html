@@ -299,14 +299,29 @@
     </footer>
 
     <script>
-        // JavaScript para el funcionamiento de las tarjetas de servicio y FAQ
+        // JavaScript para el funcionamiento de las tarjetas de servicio
         const serviceCards = document.querySelectorAll('.service-card');
+        let activeCard = null; // Variable para trackear la tarjeta activa
 
         // Mostrar más información en el menú interactivo y ajustar tamaño
         serviceCards.forEach(card => {
             card.addEventListener('click', () => {
-                serviceCards.forEach(c => c.classList.remove('active'));  // Remove active from all cards
-                card.classList.add('active');  // Add active to clicked card
+                // Si ya hay una tarjeta activa y no es la que se ha clickeado
+                if (activeCard && activeCard !== card) {
+                    activeCard.classList.remove('active');
+                    activeCard.querySelector('.service-info').style.display = 'none'; // Esconde la información
+                }
+
+                // Alternar la tarjeta activa
+                if (card === activeCard) {
+                    card.classList.remove('active');
+                    card.querySelector('.service-info').style.display = 'none'; // Esconde la información si ya está activa
+                    activeCard = null; // Se resetea la tarjeta activa
+                } else {
+                    card.classList.add('active');
+                    card.querySelector('.service-info').style.display = 'block'; // Muestra la información
+                    activeCard = card; // Marca la nueva tarjeta como activa
+                }
             });
         });
 
