@@ -226,7 +226,7 @@
             <div class="services">
                 <div class="service-card" id="modalidad10">
                     <h3>Modalidad 10</h3>
-                    <p>Para ti que trabajas de manera idependiente.</p>
+                    <p>La solución es la Modalidad 10</p>
                 </div>
                 <div class="service-card" id="modalidad40">
                     <h3>Modalidad 40</h3>
@@ -278,47 +278,108 @@
                 <p>Para cualquier aclaración, se recomienda al asegurado conservar sus comprobantes de pago.</p>
             </div>
         </div>
+        <!-- Sección FAQ -->
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq">
+                <h3>Modalidad 10</h3>
+                <ul>
+                    <li>
+                        <strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong>
+                        <p>Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
+                    </li>
+                    <li>
+                        <strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong>
+                        <p>No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.</p>
+                    </li>
+                    <li>
+                        <strong>Si en algún momento estuve afiliado al IMSS y coticé, ¿se suman las semanas cotizadas del nuevo esquema?</strong>
+                        <p>Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.</p>
+                    </li>
+                    <li>
+                        <strong>¿Las personas trabajadoras independientes deben pagar sus cuotas del Infonavit?</strong>
+                        <p>No, las cuotas del Infonavit no aplican para este esquema.</p>
+                    </li>
+                    <li>
+                        <strong>¿Cuánto tengo que pagar?</strong>
+                        <p>El monto a pagar dependerá de la calculadora en la página oficial del IMSS, basada en tus ingresos.</p>
+                    </li>
+                    <li>
+                        <strong>¿A partir de cuándo puedo inscribirme?</strong>
+                        <p>Puedes inscribirte en cualquier momento desde el portal oficial del IMSS.</p>
+                    </li>
+                    <li>
+                        <strong>Canales de Pago</strong>
+                        <p>Los pagos se realizan en línea desde el portal del IMSS o en bancos autorizados.</p>
+                    </li>
+                    <li>
+                        <strong>¿Existe una app?</strong>
+                        <p>Sí, puedes realizar gestiones desde la aplicación oficial del IMSS.</p>
+                    </li>
+                </ul>
 
-        <!-- Sección de contacto -->
-        <section id="contacto" class="contact">
-            <h3>Contacto</h3>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo Electrónico" required>
-                <textarea rows="5" placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+                <h3>Modalidad 40</h3>
+                <ul>
+                    <li>
+                        <strong>¿Cuál es el costo del trámite en cualquier modalidad?</strong>
+                        <p>El trámite es gratuito.</p>
+                    </li>
+                    <li>
+                        <strong>¿Cuál es el costo de la asesoría personalizada?</strong>
+                        <p>El costo varía dependiendo de cada caso particular.</p>
+                    </li>
+                    <li>
+                        <strong>¿Cómo se analiza mi pensión sin la Modalidad 40?</strong>
+                        <p>Se evalúa cuánto tiempo invertirías, la suma de dinero necesaria y la pensión estimada que podrías recibir. Se recomienda planificar de manera realista para evitar complicaciones financieras.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
 
+    <!-- Sección de contacto -->
+    <section id="contacto" class="contact">
+        <h3>Contacto</h3>
+        <form action="#" method="post">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Mas Que Pensiones - Todos los derechos reservados</p>
+        <p>&copy; 2025 Más Que Pensiones. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        // Animaciones para modales
-        const modalidad10 = document.getElementById('modalidad10');
-        const modalidad40 = document.getElementById('modalidad40');
-        const modal10 = document.getElementById('modal10');
-        const modal40 = document.getElementById('modal40');
+        // Scripts para manejar los modales
         const overlay = document.getElementById('overlay');
-        const closeButtons = document.querySelectorAll('.close-btn');
+        const modals = document.querySelectorAll('.modal');
+        const serviceCards = document.querySelectorAll('.service-card');
+        const closeModalButtons = document.querySelectorAll('.close-btn');
 
-        function openModal(modal) {
-            modal.classList.add('open');
-            overlay.classList.add('open');
-        }
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.id.replace('modalidad', 'modal');
+                document.getElementById(modalId).classList.add('open');
+                overlay.classList.add('open');
+            });
+        });
 
-        function closeModal() {
-            document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('open'));
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.parentElement.classList.remove('open');
+                overlay.classList.remove('open');
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            modals.forEach(modal => modal.classList.remove('open'));
             overlay.classList.remove('open');
-        }
-
-        modalidad10.addEventListener('click', () => openModal(modal10));
-        modalidad40.addEventListener('click', () => openModal(modal40));
-        closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
-        overlay.addEventListener('click', closeModal);
+        });
     </script>
 </body>
 </html>
+
