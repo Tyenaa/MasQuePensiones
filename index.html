@@ -200,6 +200,44 @@
         footer p {
             margin: 0;
         }
+
+        /* Estilo FAQ */
+        .faq-container {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #f7f7f7;
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        .faq-item .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body>
@@ -280,61 +318,27 @@
         </div>
 
         <!-- Sección FAQ -->
-        <section id="faq">
+        <section id="faq" class="faq-container">
             <h2>Preguntas Frecuentes</h2>
-            <div class="faq">
-                <h3>Modalidad 10</h3>
-                <ul>
-                    <li>
-                        <strong>¿Quiénes son las personas beneficiarias de este nuevo esquema?</strong>
-                        <p>Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
-                    </li>
-                    <li>
-                        <strong>¿Mes con mes se tiene que hacer el trámite de afiliación?</strong>
-                        <p>No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.</p>
-                    </li>
-                    <li>
-                        <strong>Si en algún momento estuve afiliado al IMSS y coticé, ¿se suman las semanas cotizadas del nuevo esquema?</strong>
-                        <p>Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.</p>
-                    </li>
-                    <li>
-                        <strong>¿Las personas trabajadoras independientes deben pagar sus cuotas del Infonavit?</strong>
-                        <p>No, las cuotas del Infonavit no aplican para este esquema.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cuánto tengo que pagar?</strong>
-                        <p>El monto a pagar dependerá de la calculadora en la página oficial del IMSS, basada en tus ingresos.</p>
-                    </li>
-                    <li>
-                        <strong>¿A partir de cuándo puedo inscribirme?</strong>
-                        <p>Puedes inscribirte en cualquier momento desde el portal oficial del IMSS.</p>
-                    </li>
-                    <li>
-                        <strong>Canales de Pago</strong>
-                        <p>Los pagos se realizan en línea desde el portal del IMSS o en bancos autorizados.</p>
-                    </li>
-                    <li>
-                        <strong>¿Existe una app?</strong>
-                        <p>Sí, puedes realizar gestiones desde la aplicación oficial del IMSS.</p>
-                    </li>
-                </ul>
 
-                <h3>Modalidad 40</h3>
-                <ul>
-                    <li>
-                        <strong>¿Cuál es el costo del trámite en cualquier modalidad?</strong>
-                        <p>El trámite es gratuito.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cuál es el costo de la asesoría personalizada?</strong>
-                        <p>El costo varía dependiendo de cada caso particular.</p>
-                    </li>
-                    <li>
-                        <strong>¿Cómo se analiza mi pensión sin la Modalidad 40?</strong>
-                        <p>Se evalúa cuánto tiempo invertirías, la suma de dinero necesaria y la pensión estimada que podrías recibir. Se recomienda planificar de manera realista para evitar complicaciones financieras.</p>
-                    </li>
-                </ul>
+            <div class="faq-item">
+                <span>¿Quiénes son las personas beneficiarias de este nuevo esquema?</span>
+                <span class="arrow">▶</span>
+                <p>Son beneficiarias las personas trabajadoras independientes, incluyendo profesionales, comerciantes en pequeño, artesanos y demás trabajadores no asalariados.</p>
             </div>
+
+            <div class="faq-item">
+                <span>¿Mes con mes se tiene que hacer el trámite de afiliación?</span>
+                <span class="arrow">▶</span>
+                <p>No, el trámite de afiliación se realiza una sola vez. Sin embargo, el pago de cuotas debe ser mensual.</p>
+            </div>
+
+            <div class="faq-item">
+                <span>Si en algún momento estuve afiliado al IMSS ¿se suman las semanas cotizadas del nuevo esquema?</span>
+                <span class="arrow">▶</span>
+                <p>Sí, las semanas cotizadas en este esquema se suman al historial de cotización previo del IMSS.</p>
+            </div>
+
         </section>
     </div>
 
@@ -355,30 +359,13 @@
     </footer>
 
     <script>
-        // Scripts para manejar los modales
-        const overlay = document.getElementById('overlay');
-        const modals = document.querySelectorAll('.modal');
-        const serviceCards = document.querySelectorAll('.service-card');
-        const closeModalButtons = document.querySelectorAll('.close-btn');
+        // Script para manejar el FAQ
+        const faqItems = document.querySelectorAll('.faq-item');
 
-        serviceCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.id.replace('modalidad', 'modal');
-                document.getElementById(modalId).classList.add('open');
-                overlay.classList.add('open');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
             });
-        });
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.parentElement.classList.remove('open');
-                overlay.classList.remove('open');
-            });
-        });
-
-        overlay.addEventListener('click', () => {
-            modals.forEach(modal => modal.classList.remove('open'));
-            overlay.classList.remove('open');
         });
     </script>
 </body>
